@@ -1,7 +1,6 @@
 package com.example.artspace
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
@@ -9,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
@@ -30,7 +30,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -87,9 +86,30 @@ fun ArtSpaceApp() {
             when(currentStep) {
                 1 -> {
                     SpaceTextAndImage(
-                        textLabelResourceID = R.string.Space,
-                        drawableResourceId = R.drawable.space,
-                        contentDescriptionResourceId = R.string.Space,
+                        textLabelResourceID = R.string.saturn,
+                        drawableResourceId = R.drawable.saturn,
+                        contentDescriptionResourceId = R.string.planet_saturn_content_description,
+                        onImageClick = { currentStep = 2 })
+                }
+                2 -> {
+                    SpaceTextAndImage(
+                        textLabelResourceID = R.string.uranus,
+                        drawableResourceId = R.drawable.uranus,
+                        contentDescriptionResourceId = R.string.planet_uranus_content_description,
+                        onImageClick = { currentStep = 3 })
+                }
+                3 -> {
+                    SpaceTextAndImage(
+                        textLabelResourceID = R.string.mars,
+                        drawableResourceId = R.drawable.mars,
+                        contentDescriptionResourceId = R.string.planet_mars_content_description,
+                        onImageClick = { currentStep = 4 })
+                }
+                4 -> {
+                    SpaceTextAndImage(
+                        textLabelResourceID = R.string.earth,
+                        drawableResourceId = R.drawable.earth,
+                        contentDescriptionResourceId = R.string.planet_earth_content_description,
                         onImageClick = { currentStep = 1 })
                 }
             }
@@ -128,7 +148,11 @@ fun SpaceTextAndImage(
                         .padding(dimensionResource(R.dimen.button_interior_padding))
             )
         }
-
+        Spacer(modifier = Modifier.height(dimensionResource(R.dimen.padding_vertical)))
+        Text(
+            text = stringResource(textLabelResourceID),
+            style = MaterialTheme.typography.bodyLarge
+        )
     }
 }
 

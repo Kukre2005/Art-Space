@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Art Space</string>
-    <string name="Space">Image To Saturn</string>
+    <string name="saturn">Awesome Planet</string>
+    <string name="uranus">Blue Planet</string>
+    <string name="mars">The Red Planet</string>
+    <string name="earth">My Awesome Planet</string>
+    <string name="planet_saturn_content_description">Saturn Planet</string>
+    <string name="planet_uranus_content_description">Uranus Planet</string>
+    <string name="planet_mars_content_description">Mars Planet</string>
+    <string name="planet_earth_content_description">Earth Planet</string>
 </resources>
